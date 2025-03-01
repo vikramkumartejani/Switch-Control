@@ -7,21 +7,21 @@ import OFFONToggle from './OFFONToggle'
 import ResetWiFi from './ResetWiFi'
 
 const smartLightsData = [
-    { name: "Smart Light 1", icon: "/assets/box-icons.svg", initialState: true },
-    { name: "Smart Light 2", icon: "/assets/box-icons.svg", initialState: false },
-    { name: "Smart Light 3", icon: "/assets/box-icons.svg", initialState: true },
-    { name: "Smart Light 4", icon: "/assets/box-icons.svg", initialState: false },
-    { name: "Smart Light 5", icon: "/assets/box-icons.svg", initialState: false },
-    { name: "Smart Light 6", icon: "/assets/box-icons.svg", initialState: true },
-    { name: "Smart Light 7", icon: "/assets/box-icons.svg", initialState: false },
-    { name: "Smart Light 8", icon: "/assets/box-icons.svg", initialState: true },
+    { name: "Smart Light 1", icon: "/assets/light.png", initialState: true },
+    { name: "Smart Light 2", icon: "/assets/light.png", initialState: false },
+    { name: "Smart Light 3", icon: "/assets/light.png", initialState: true },
+    { name: "Smart Light 4", icon: "/assets/light.png", initialState: false },
+    { name: "Smart Light 5", icon: "/assets/light.png", initialState: false },
+    { name: "Smart Light 6", icon: "/assets/light.png", initialState: true },
+    { name: "Smart Light 7", icon: "/assets/light.png", initialState: false },
+    { name: "Smart Light 8", icon: "/assets/light.png", initialState: true },
 ]
 
 const smartLightsData4 = [
-    { name: "Smart Light 1", icon: "/assets/box-icons.svg", initialState: true },
-    { name: "Smart Light 2", icon: "/assets/box-icons.svg", initialState: false },
-    { name: "Smart Light 3", icon: "/assets/box-icons.svg", initialState: true },
-    { name: "Smart Light 4", icon: "/assets/box-icons.svg", initialState: false },
+    { name: "Smart Light 1", icon: "/assets/light.png", initialState: true },
+    { name: "Smart Light 2", icon: "/assets/light.png", initialState: false },
+    { name: "Smart Light 3", icon: "/assets/light.png", initialState: true },
+    { name: "Smart Light 4", icon: "/assets/light.png", initialState: false },
 ]
 
 const DeviceControlPanel = () => {
@@ -39,7 +39,7 @@ const DeviceControlPanel = () => {
     return (
         <div className="flex flex-col gap-5">
             {/* 8 Port Device */}
-            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5" style={{ boxShadow: "0px 4px 20px 0px #0706121A" }}>
+            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5 border border-white/30" style={{ boxShadow: "0px 4px 20px 0px #0706121A" }}>
                 <div className="flex items-center justify-between flex-wrap gap-4">
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">8 Port Device</h2>
                     <div className="flex items-center gap-2.5">
@@ -72,7 +72,7 @@ const DeviceControlPanel = () => {
                     {/* 8 Port Controller */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/home-automation.png" alt="box-icons" width={40} height={40} />
                             <div className="flex items-center gap-1.5">
                                 <h3 className="text-white text-[14px] font-normal leading-[20px]">Status:</h3>
                                 <div className="bg-[#07FF3533] w-fit flex items-center gap-1 rounded-[30px] p-2.5">
@@ -104,7 +104,7 @@ const DeviceControlPanel = () => {
                     {/* Manual Enable/Disable */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/setting.png" alt="box-icons" width={40} height={40} />
                             <EnableDisable initialState={true} />
                         </div>
 
@@ -119,7 +119,7 @@ const DeviceControlPanel = () => {
                     {/* Auto Manual Enable/Disable */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/setting.png" alt="box-icons" width={40} height={40} />
                             <EnableDisable initialState={false} />
                         </div>
 
@@ -149,7 +149,7 @@ const DeviceControlPanel = () => {
             </div>
 
             {/* 4 Port Device */}
-            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5" style={{ boxShadow: "0px 4px 20px 0px #0706121A" }}>
+            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5 border border-white/30" style={{ boxShadow: "0px 4px 20px 0px #0706121A" }}>
                 <div className="flex items-center flex-wrap justify-between gap-4">
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">4 Port Device</h2>
                     <div className="flex items-center gap-2.5">
@@ -182,7 +182,7 @@ const DeviceControlPanel = () => {
                     {/* Status */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/home-automation.png" alt="box-icons" width={40} height={40} />
                             <div className="flex items-center gap-1.5">
                                 <h3 className="text-white text-[14px] font-normal leading-[20px]">Status:</h3>
                                 <div className="bg-[#07FF3533] w-fit flex items-center gap-1 rounded-[30px] p-2.5">
@@ -214,7 +214,7 @@ const DeviceControlPanel = () => {
                     {/* Manual Enable/Disable */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/setting.png" alt="box-icons" width={40} height={40} />
                             <EnableDisable initialState={true} />
                         </div>
 
@@ -229,7 +229,7 @@ const DeviceControlPanel = () => {
                     {/* Auto Manual Enable/Disable */}
                     <div className="bg-[#161B21] border border-[#2E3237] p-[15px] rounded-xl">
                         <div className="flex items-center justify-between gap-5">
-                            <Image src="/assets/box-icons.svg" alt="box-icons" width={40} height={40} />
+                            <Image src="/assets/setting.png" alt="box-icons" width={40} height={40} />
                             <EnableDisable initialState={false} />
                         </div>
 
