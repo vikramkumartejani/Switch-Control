@@ -23,11 +23,11 @@ h2 {
 
 .scroll {
   overflow-y: scroll;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .scroll::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -35,8 +35,6 @@ h2 {
     padding: 14px;
   }
 }
-
-
 
 .toggle-button-cover {
   display: inline-block;
@@ -109,7 +107,7 @@ h2 {
   align-items: center;
   justify-content: center;
   line-height: 26px;
-  
+
   background-color: #f44336;
   border-radius: 50%;
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
@@ -129,16 +127,13 @@ h2 {
   background-color: #ff0;
   color: black;
   left: 43px;
- 
-  
 }
 
 #button-3 .checkbox:checked ~ .layer {
-  background-color:  rgba(255, 255, 0, .267);
+  background-color: rgba(255, 255, 0, 0.267);
 }
 
-
-/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */
 #checkboxmain {
   display: none;
 }
@@ -164,6 +159,6 @@ h2 {
   fill: white;
 }
 #checkboxmain:checked + .switchmain {
-  background-color: rgba(0, 174, 81, 0.74);
-  box-shadow: 0px 0px 40px rgba(0, 174, 80, 0.438);
+  background-color: rgba(255, 204, 0, 0.767);
+  box-shadow: 0px 0px 40px rgba(255, 204, 0, 0.6);
 }

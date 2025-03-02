@@ -25,17 +25,6 @@ const smartLightsData4 = [
 ]
 
 const DeviceControlPanel = () => {
-    const [allSwitchesOn8Port, setAllSwitchesOn8Port] = useState(false)
-    const [allSwitchesOn4Port, setAllSwitchesOn4Port] = useState(true)
-
-    const toggleAllSwitches8Port = () => {
-        setAllSwitchesOn8Port(!allSwitchesOn8Port)
-    }
-
-    const toggleAllSwitches4Port = () => {
-        setAllSwitchesOn4Port(!allSwitchesOn4Port)
-    }
-
     const [isChecked, setIsChecked] = useState(false);
 
     const handleChange = () => {
@@ -161,27 +150,27 @@ const DeviceControlPanel = () => {
                 <div className="flex items-center flex-wrap justify-between gap-4">
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">4 Port Device</h2>
                     <div className="flex items-center gap-2.5">
-                        <button
-                            className={`${allSwitchesOn4Port ? "bg-[#134925] shadow-[0px_0px_40px_rgba(19,73,37,1)]"
-                                : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
-                            onClick={toggleAllSwitches4Port}
-                        >
-                            <Image
-                                src={allSwitchesOn4Port ? "/assets/enable.svg" : "/assets/disabled.svg"}
-                                alt={allSwitchesOn4Port ? "enable" : "disabled"}
-                                width={30}
-                                height={30}
-                                className="md:w-[30px] md:h-[30px] w-[25px] h-[25px]"
+                        <div>
+                            <input
+                                type="checkbox"
+                                id="checkboxmain"
+                                checked={isChecked}
+                                onChange={handleChange}
                             />
-                            <span
-                                className={`w-[5px] h-[5px] rounded-full ${allSwitchesOn4Port ? "bg-[#07FF35]" : "bg-[#F2161A]"}`}
-                            ></span>
-                            <h3
-                                className={`${allSwitchesOn4Port ? "text-[#07FF35]" : "text-[#F2161A]"} text-[14px] font-normal leading-[16.41px] pt-0.5`}
-                            >
-                                {allSwitchesOn4Port ? "All Switch On" : "All Switch Off"}
-                            </h3>
-                        </button>
+                            <label htmlFor="checkboxmain" className="switchmain">
+                                <svg
+                                    className="slider"
+                                    viewBox="0 0 512 512"
+                                    height="1.2em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
+                                    ></path>
+                                </svg>
+                                {isChecked ? 'All Switch On' : 'All Switch Off'}
+                            </label>
+                        </div>
                         <ResetWiFi />
                     </div>
                 </div>
