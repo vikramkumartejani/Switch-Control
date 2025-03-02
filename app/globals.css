@@ -54,7 +54,6 @@ h2 {
   position: relative;
   width: 74px;
   height: 36px;
-  margin: 0;
   overflow: hidden;
 }
 
@@ -89,7 +88,8 @@ h2 {
 
 .layer {
   width: 100%;
-  background-color: rgba(255, 255, 0, 0.267);
+  background: #fcebeb;
+  /* background-color: rgba(255, 255, 0, 0.267); */
   transition: 0.3s ease all;
   z-index: 1;
 }
@@ -101,7 +101,7 @@ h2 {
   left: 3px;
   width: 28px;
   height: 28px;
-  color: rgba(0, 0, 0, 0.856);
+  color: white;
   font-size: 10px;
   font-weight: bold;
   text-align: center;
@@ -109,7 +109,8 @@ h2 {
   align-items: center;
   justify-content: center;
   line-height: 26px;
-  background-color: yellow;
+  
+  background-color: #f44336;
   border-radius: 50%;
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
@@ -125,13 +126,15 @@ h2 {
 
 #button-3 .checkbox:checked + .knobs:before {
   content: "ON";
+  background-color: #ff0;
+  color: black;
   left: 43px;
-  background-color: #f44336;
+ 
   
 }
 
 #button-3 .checkbox:checked ~ .layer {
-  background-color: #fcebeb;
+  background-color:  rgba(255, 255, 0, .267);
 }
 
 
