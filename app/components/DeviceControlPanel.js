@@ -39,12 +39,14 @@ const DeviceControlPanel = () => {
     return (
         <div className="flex flex-col gap-5">
             {/* 8 Port Device */}
-            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5 border border-white/30" style={{ boxShadow: "0px 4px 20px 0px #0706121A" }}>
+            <div className="bg-[#1D232C] rounded-xl p-4 md:p-5 border border-white/30" style={{ boxShadow: "0px 4px 50px 0px #0706121A" }}>
                 <div className="flex items-center justify-between flex-wrap gap-4">
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">8 Port Device</h2>
                     <div className="flex items-center gap-2.5">
                         <button
-                            className={`${allSwitchesOn8Port ? "bg-[#134925]" : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
+                            className={`${allSwitchesOn8Port
+                                ? "bg-[#134925] shadow-[0px_0px_40px_rgba(19,73,37,0.6)]"
+                                : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
                             onClick={toggleAllSwitches8Port}
                         >
                             <Image
@@ -55,7 +57,7 @@ const DeviceControlPanel = () => {
                                 className="md:w-[30px] md:h-[30px] w-[25px] h-[25px]"
                             />
                             <span
-                                className={`w-[5px] h-[5px] rounded-full ${allSwitchesOn8Port ? "bg-[#07FF35]" : "bg-[#F2161A]"}`}
+                                className={`w-[5px] h-[5px] rounded-full shadow-lg ${allSwitchesOn8Port ? "bg-[#07FF35]" : "bg-[#F2161A]"}`}
                             ></span>
                             <h3
                                 className={`${allSwitchesOn8Port ? "text-[#07FF35]" : "text-[#F2161A]"} text-[14px] font-normal leading-[16.41px] pt-0.5`}
@@ -63,6 +65,7 @@ const DeviceControlPanel = () => {
                                 {allSwitchesOn8Port ? "All Switch On" : "All Switch Off"}
                             </h3>
                         </button>
+
                         <ResetWiFi />
                     </div>
                 </div>
@@ -154,7 +157,8 @@ const DeviceControlPanel = () => {
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">4 Port Device</h2>
                     <div className="flex items-center gap-2.5">
                         <button
-                            className={`${allSwitchesOn4Port ? "bg-[#134925]" : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
+                            className={`${allSwitchesOn4Port  ? "bg-[#134925] shadow-[0px_0px_40px_rgba(19,73,37,1)]"
+                                : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
                             onClick={toggleAllSwitches4Port}
                         >
                             <Image
