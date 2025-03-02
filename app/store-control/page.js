@@ -52,7 +52,7 @@ const StoreControl = () => {
         return (
             <div className="relative">
                 <div
-                    className="flex items-center justify-between bg-[#000000] text-white px-5 py-2.5 gap-2 rounded-[10px] cursor-pointer"
+                    className="flex items-center justify-between bg-[#000000] text-white px-5 py-2 gap-2 rounded-[10px] cursor-pointer"
                     onClick={() => !disabled && setIsOpen(!isOpen)}
                 >
                     <span>{getDisplayValue()}</span>

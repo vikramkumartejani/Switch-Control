@@ -3,26 +3,43 @@ import { GiPowerButton } from "react-icons/gi";
 
 const ToggleButton = ({ isEnabled, onClick }) => {
     return (
-        <button
-            className={`h-[40px] md:h-[50px] rounded-[20px] md:rounded-[30px] min-w-[120px] px-2.5 flex items-center ${isEnabled ? "bg-[#07FF3533] justify-between" : "bg-[#F2161A33] flex-row-reverse justify-between"
-                } gap-[5px]`}
-            onClick={onClick}
-        >
-            <h3 className={`text-[14px] font-normal leading-[16.41px]  ${isEnabled ? "text-[#07FF35] pt-0.5" : "text-[#F2161A] pt-0.5"}`}>
-                {isEnabled ? "Enabled" : "Disabled"}
-            </h3>
-            <span className={`w-[5px] h-[5px] rounded-full ${isEnabled ? "bg-[#07FF35]" : "bg-[#F2161A]"}`}></span>
+        <div className="flex items-center">
+            <label className="switch relative inline-block w-[120px] h-[40px] cursor-pointer">
+                <input
+                    type="checkbox"
+                    checked={isEnabled}
+                    onChange={onClick}
+                    className="sr-only"
+                />
+                <span className={`slider absolute top-0 left-0 right-0 bottom-0 rounded-[34px] transition-all duration-[0.4s] ${isEnabled ? "bg-[#134925]" : "bg-[#F2161A33]"
+                    }`}>
+                    <span className="absolute text-white text-[12px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        {isEnabled ? "ENABLED" : "DISABLED"}
+                    </span>
+                </span>
 
-            {isEnabled ? (
-                <div className='bg-black rounded-full w-[28px] h-[28px] flex items-center justify-center'>
-                    <GiPowerButton className='text-[#07FF35] -mt-[1px] ' size={24} />
+                {/* Toggle Circle */}
+                <div
+                    className="absolute h-[26px] w-[26px] left-[4px] bottom-[7px] rounded-full transition-all duration-[0.4s]"
+                    style={{
+                        transform: isEnabled ? "translateX(85px)" : "translateX(0)"
+                    }}
+                >
+                    {/* Icon container */}
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        {isEnabled ? (
+                            <div className='bg-black rounded-full w-[28px] h-[28px] flex items-center justify-center'>
+                                <GiPowerButton className='text-[#07FF35] -mt-[1px] ' size={24} />
+                            </div>
+                        ) : (
+                            <div className='bg-black rounded-full w-[28px] h-[28px] flex items-center justify-center'>
+                                <GiPowerButton className='text-[#F2161A] -mt-[1px] -ml-[1px]' size={24} />
+                            </div>
+                        )}
+                    </div>
                 </div>
-            ) : (
-                <div className='bg-black rounded-full w-[28px] h-[28px] flex items-center justify-center'>
-                    <GiPowerButton className='text-[#F2161A] -mt-[1px] -ml-[1px]' size={24} />
-                </div>
-            )}
-        </button>
+            </label>
+        </div>
     )
 }
 
