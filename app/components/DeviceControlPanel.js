@@ -46,7 +46,7 @@ const DeviceControlPanel = () => {
                         <button
                             className={`${allSwitchesOn8Port
                                 ? "bg-[#134925] shadow-[0px_0px_40px_rgba(19,73,37,0.6)]"
-                                : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
+                                : "bg-[#010102]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
                             onClick={toggleAllSwitches8Port}
                         >
                             <Image
