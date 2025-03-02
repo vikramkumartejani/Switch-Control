@@ -86,7 +86,7 @@ h2 {
 
 .layer {
   width: 100%;
-  background: #fcebeb;
+  background: #999;
   /* background-color: rgba(255, 255, 0, 0.267); */
   transition: 0.3s ease all;
   z-index: 1;
@@ -107,7 +107,6 @@ h2 {
   align-items: center;
   justify-content: center;
   line-height: 26px;
-
   background-color: #f44336;
   border-radius: 50%;
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
@@ -124,8 +123,9 @@ h2 {
 
 #button-3 .checkbox:checked + .knobs:before {
   content: "ON";
-  background-color:  rgba(255, 204, 0, 0.767);
+  background-color: rgba(255, 204, 0, 0.767);
   color: black;
+  box-shadow: 0px 0px 40px rgba(255, 204, 0, 1);
   left: 43px;
 }
 
@@ -133,10 +133,6 @@ h2 {
   background-color: rgba(255, 255, 0, 0.267);
 }
 
-/* From Uiverse.io by vinodjangid07 */
-#checkboxmain {
-  display: none;
-}
 
 .switchmain {
   position: relative;
@@ -155,10 +151,13 @@ h2 {
   font-weight: 600;
   transition: all 0.3s;
 }
+
 .switchmain svg path {
   fill: white;
 }
-#checkboxmain:checked + .switchmain {
+
+/* Apply styles when switch is checked */
+.switch-active {
   background-color: rgba(255, 204, 0, 0.767);
   box-shadow: 0px 0px 40px rgba(255, 204, 0, 0.6);
 }

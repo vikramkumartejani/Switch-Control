@@ -4,16 +4,18 @@ import { GiPowerButton } from "react-icons/gi";
 const ToggleButton = ({ isEnabled, onClick }) => {
     return (
         <div className="flex items-center">
-            <label className="switch relative inline-block w-[120px] h-[40px] cursor-pointer">
+            <label className="switch relative inline-block w-[100px] h-[40px] cursor-pointer">
                 <input
                     type="checkbox"
                     checked={isEnabled}
                     onChange={onClick}
                     className="sr-only"
                 />
-                <span className={`slider absolute top-0 left-0 right-0 bottom-0 rounded-[34px] transition-all duration-[0.4s] ${isEnabled ? "bg-[#134925]" : "bg-[#F2161A33]"
+
+                <span className={`absolute top-0 left-0 right-0 bottom-0 rounded-[34px] transition-all duration-[0.4s] ${isEnabled ? "bg-[#134925]" : "bg-[#F2161A33]"
                     }`}>
-                    <span className="absolute text-white text-[12px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <span className={`absolute text-white text-[12px] top-1/2 transform -translate-y-1/2 ${isEnabled ? "left-[10px] -translate-x-0" : "right-[10px] translate-x-0"
+                        }`}>
                         {isEnabled ? "ENABLED" : "DISABLED"}
                     </span>
                 </span>
@@ -22,7 +24,7 @@ const ToggleButton = ({ isEnabled, onClick }) => {
                 <div
                     className="absolute h-[26px] w-[26px] left-[4px] bottom-[7px] rounded-full transition-all duration-[0.4s]"
                     style={{
-                        transform: isEnabled ? "translateX(85px)" : "translateX(0)"
+                        left: isEnabled ? "70px" : "4px"
                     }}
                 >
                     {/* Icon container */}
