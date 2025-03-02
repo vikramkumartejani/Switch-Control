@@ -29,16 +29,17 @@ const StoreControl = () => {
     const customerNameOptions = [1, 2]
     const timeoutOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    const CustomDropdown = ({ value, onChange, options, disabled }) => {
+    const CustomDropdown = ({ value, onChange, options, disabled,  isTimeout  }) => {
         const [isOpen, setIsOpen] = useState(false)
 
         return (
             <div className="relative">
                 <div
-                    className="flex items-center justify-between bg-[#000000] text-white px-5 py-2.5 gap-[50px] rounded-[10px] cursor-pointer"
+                    className="flex items-center justify-between bg-[#000000] text-white px-5 py-2.5 gap-2 rounded-[10px] cursor-pointer"
                     onClick={() => !disabled && setIsOpen(!isOpen)}
                 >
                     <span>{value}</span>
+                    {isTimeout && <span>Minutes</span>}
                     <FaChevronDown className="h-3 w-3" />
                 </div>
 
@@ -53,7 +54,7 @@ const StoreControl = () => {
                                     setIsOpen(false)
                                 }}
                             >
-                                {option}
+                                {option} {isTimeout ? "minutes" : ""}
                             </div>
                         ))}
                     </div>
@@ -80,6 +81,7 @@ const StoreControl = () => {
                             onChange={setCustomerNameValue}
                             options={customerNameOptions}
                             disabled={!toggles.requiredCustomerName}
+                            isTimeout={false}
                         />
                         <ToggleButton
                             isEnabled={toggles.requiredCustomerName}
@@ -102,6 +104,7 @@ const StoreControl = () => {
                             onChange={setTimeoutValue}
                             options={timeoutOptions}
                             disabled={!toggles.gameCancellationTimeout}
+                            isTimeout={true}
                         />
                         <ToggleButton
                             isEnabled={toggles.gameCancellationTimeout}
