@@ -124,7 +124,7 @@ h2 {
 
 #button-3 .checkbox:checked + .knobs:before {
   content: "ON";
-  background-color: #ff0;
+  background-color:  rgba(255, 204, 0, 0.767);
   color: black;
   left: 43px;
 }
