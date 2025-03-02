@@ -43,30 +43,7 @@ const DeviceControlPanel = () => {
                 <div className="flex items-center justify-between flex-wrap gap-4">
                     <h2 className="text-white text-[18px] font-semibold leading-[27px]">8 Port Device</h2>
                     <div className="flex items-center gap-2.5">
-                        {/* <button
-                            className={`${allSwitchesOn8Port
-                                ? "bg-[#134925] shadow-[0px_0px_40px_rgba(19,73,37,0.6)] transition-all duration-300"
-                                : "bg-[#F2161A33]"} rounded-[20px] md:rounded-[30px] h-[40px] md:h-[50px] flex items-center justify-center gap-[5px] px-3.5`}
-                            onClick={toggleAllSwitches8Port}
-                        >
-                            <Image
-                                src={allSwitchesOn8Port ? "/assets/enable.svg" : "/assets/disabled.svg"}
-                                alt={allSwitchesOn8Port ? "enable" : "disabled"}
-                                width={30}
-                                height={30}
-                                className="md:w-[30px] md:h-[30px] w-[25px] h-[25px]"
-                            />
-                            <span
-                                className={`w-[5px] h-[5px] rounded-full shadow-lg ${allSwitchesOn8Port ? "bg-[#07FF35]" : "bg-[#F2161A]"}`}
-                            ></span>
-                            <h3
-                                className={`${allSwitchesOn8Port ? "text-[#07FF35]" : "text-[#F2161A]"} text-[14px] font-normal leading-[16.41px] pt-0.5`}
-                            >
-                                {allSwitchesOn8Port ? "All Switch On" : "All Switch Off"}
-                            </h3>
-                        </button> */}
                         <div>
-
                             <input type="checkbox" id="checkboxmain" />
                             <label for="checkboxmain" class="switchmain">
                                 <svg
@@ -79,8 +56,7 @@ const DeviceControlPanel = () => {
                                         d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
                                     ></path>
                                 </svg>
-                                {allSwitchesOn8Port ? "All Switch On" : "All Switch Off"}
-                                {/* All Switch On */}
+                                All Switch On
                             </label>
                         </div>
 
