@@ -35,9 +35,9 @@ function ResetWiFi() {
             {isOpen && (
                 <div
                     ref={dropdownRef}
-                    className="bg-[#3B4758] absolute right-0 top-10 p-0.5 rounded-lg w-[150px]"
+                    className="bg-[#3B4758] z-50 absolute right-0 top-10 p-0.5 rounded-lg w-[150px]"
                 >
-                    <button className="w-full text-white text-[14px] leading-[16.41px] font-normal bg-[#161B21] p-2.5 rounded">
+                    <button className="w-full text-white text-[14px] leading-[16.41px] font-normal bg-[#161B21] p-2.5 rounded-lg">
                         Reset Wi-Fi
                     </button>
                 </div>

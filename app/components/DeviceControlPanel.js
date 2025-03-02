@@ -86,13 +86,13 @@ const DeviceControlPanel = () => {
                             <h3 className="text-[16px] font-bold leading-[20px]">8 Port Controller</h3>
                             <ul className="mt-1 list-disc pl-5">
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Warranty Till: <span className="font-normal">17 Dec 2025</span>
+                                    Device Name: <span className="font-normal">17 Dec 2025</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Device Name: <span className="font-normal">4 Node</span>
+                                    Serial Number: <span className="font-normal">4 Node</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Serial Number: <span className="font-normal">CC:DB:33:44:01:74</span>
+                                    Firmware Version: <span className="font-normal">CC:DB:33:44:01:74</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
                                     Limited Warranty: <span className="font-normal">17 Dec 2025</span>
@@ -193,16 +193,16 @@ const DeviceControlPanel = () => {
                         </div>
 
                         <div className="mt-2.5 text-white">
-                            <h3 className="text-[16px] font-bold leading-[20px]">8 Port Controller</h3>
+                            <h3 className="text-[16px] font-bold leading-[20px]">4 Port Controller</h3>
                             <ul className="mt-1 list-disc pl-5">
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Warranty Till: <span className="font-normal">17 Dec 2025</span>
+                                    Device Name: <span className="font-normal">17 Dec 2025</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Device Name: <span className="font-normal">4 Node</span>
+                                    Serial Number: <span className="font-normal">4 Node</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
-                                    Serial Number: <span className="font-normal">CC:DB:33:44:01:74</span>
+                                    Firmware Version: <span className="font-normal">CC:DB:33:44:01:74</span>
                                 </li>
                                 <li className="text-[14px] font-medium leading-[20px]">
                                     Limited Warranty: <span className="font-normal">17 Dec 2025</span>
