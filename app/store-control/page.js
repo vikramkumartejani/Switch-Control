@@ -26,11 +26,27 @@ const StoreControl = () => {
         }))
     }
 
-    const customerNameOptions = [1, 2]
+    // Updated customer name options with descriptive text
+    const customerNameOptions = [
+        { value: 1, label: "1 Customer" },
+        { value: 2, label: "2 Customers" }
+    ]
     const timeoutOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    const CustomDropdown = ({ value, onChange, options, disabled,  isTimeout  }) => {
+    const CustomDropdown = ({ value, onChange, options, disabled, isTimeout, isCustomerName }) => {
         const [isOpen, setIsOpen] = useState(false)
+
+        const getTimeUnit = (val) => {
+            return val === 1 ? "Minute" : "Minutes"
+        }
+
+        const getDisplayValue = () => {
+            if (isCustomerName) {
+                const option = customerNameOptions.find(opt => opt.value === value)
+                return option ? option.label : value
+            }
+            return value + (isTimeout ? ` ${getTimeUnit(value)}` : "")
+        }
 
         return (
             <div className="relative">
@@ -38,25 +54,39 @@ const StoreControl = () => {
                     className="flex items-center justify-between bg-[#000000] text-white px-5 py-2.5 gap-2 rounded-[10px] cursor-pointer"
                     onClick={() => !disabled && setIsOpen(!isOpen)}
                 >
-                    <span>{value}</span>
-                    {isTimeout && <span>Minutes</span>}
+                    <span>{getDisplayValue()}</span>
                     <FaChevronDown className="h-3 w-3" />
                 </div>
 
                 {isOpen && (
                     <div className="absolute top-10 left-0 mt-1 border border-[#3B4758] bg-black rounded-[10px] shadow-lg z-10 w-full max-h-40 overflow-y-auto scroll">
-                        {options.map((option) => (
-                            <div
-                                key={option}
-                                className="px-3 py-2 text-white cursor-pointer border-b border-[#3B4758] last:border-b-0"
-                                onClick={() => {
-                                    onChange(option)
-                                    setIsOpen(false)
-                                }}
-                            >
-                                {option} {isTimeout ? "minutes" : ""}
-                            </div>
-                        ))}
+                        {isCustomerName ? 
+                            customerNameOptions.map((option) => (
+                                <div
+                                    key={option.value}
+                                    className="px-3 py-2 text-white cursor-pointer border-b border-[#3B4758] last:border-b-0"
+                                    onClick={() => {
+                                        onChange(option.value)
+                                        setIsOpen(false)
+                                    }}
+                                >
+                                    {option.label}
+                                </div>
+                            ))
+                            :
+                            options.map((option) => (
+                                <div
+                                    key={option}
+                                    className="px-3 py-2 text-white cursor-pointer border-b border-[#3B4758] last:border-b-0"
+                                    onClick={() => {
+                                        onChange(option)
+                                        setIsOpen(false)
+                                    }}
+                                >
+                                    {option} {isTimeout ? getTimeUnit(option) : ""}
+                                </div>
+                            ))
+                        }
                     </div>
                 )}
             </div>
@@ -82,6 +112,7 @@ const StoreControl = () => {
                             options={customerNameOptions}
                             disabled={!toggles.requiredCustomerName}
                             isTimeout={false}
+                            isCustomerName={true}
                         />
                         <ToggleButton
                             isEnabled={toggles.requiredCustomerName}
@@ -105,6 +136,7 @@ const StoreControl = () => {
                             options={timeoutOptions}
                             disabled={!toggles.gameCancellationTimeout}
                             isTimeout={true}
+                            isCustomerName={false}
                         />
                         <ToggleButton
                             isEnabled={toggles.gameCancellationTimeout}
@@ -191,4 +223,3 @@ const StoreControl = () => {
 }
 
 export default StoreControl
-
