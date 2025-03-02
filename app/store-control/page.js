@@ -14,6 +14,7 @@ const StoreControl = () => {
         amountRoundingOptions: true,
         roundingType: true,
         printReceipt: true,
+        holdCheckout: true,
     })
 
     const [customerNameValue, setCustomerNameValue] = useState(1)
@@ -210,12 +211,21 @@ const StoreControl = () => {
                 </div>
 
                 {/* Print Receipt */}
-                <div className="flex justify-between md:flex-row flex-col items-start md:items-center gap-4 pt-2.5">
+                <div className="flex justify-between md:flex-row flex-col items-start md:items-center gap-4 py-2.5 border-b border-[#3B4758]">
                     <div>
                         <h2 className="font-medium text-base lg:text-[18px] leading-[21.09px] text-white mb-[5px]">Print Receipt:</h2>
                         <p className="text-[#BAC4D1] text-sm lg:text-[18px] leading-[21.09px] font-normal">Prints a copy of the bill.</p>
                     </div>
                     <ToggleButton isEnabled={toggles.printReceipt} onClick={() => handleToggle("printReceipt")} />
+                </div>
+
+                {/* Hold Checkout */}
+                <div className="flex justify-between md:flex-row flex-col items-start md:items-center gap-4 pt-2.5">
+                    <div>
+                        <h2 className="font-medium text-base lg:text-[18px] leading-[21.09px] text-white mb-[5px]">Hold Checkout:</h2>
+                        <p className="text-[#BAC4D1] text-sm lg:text-[18px] leading-[21.09px] font-normal">Temporarily reserves an checkout for a customer, allowing them to finalize the purchase later.</p>
+                    </div>
+                    <ToggleButton isEnabled={toggles.holdCheckout} onClick={() => handleToggle("holdCheckout")} />
                 </div>
             </div>
         </div>

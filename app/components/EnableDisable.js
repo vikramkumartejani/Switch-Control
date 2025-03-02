@@ -11,60 +11,47 @@ const EnableDisable = ({ initialState = false, enabledText = "Enabled", disabled
     }
 
     return (
-        <button
-            className={`h-[40px] md:h-[50px] rounded-[20px] md:rounded-[30px] min-w-[120px] px-2.5 flex items-center relative overflow-hidden transition-all duration-300 ${
-                isEnabled ? "bg-[#07FF3533] justify-between" : "bg-[#F2161A33] flex-row-reverse justify-between"
-            } gap-[5px]`}
-            onClick={handleToggle}
-        >
-            {/* Background color overlay - animates with scale */}
-            <div 
-                className={`absolute top-0 left-0 h-full rounded-[20px] md:rounded-[30px] transition-all duration-300 ${
-                    isEnabled ? "bg-[#07FF3533] w-full scale-100" : "bg-[#F2161A33] w-1/2 scale-0"
-                }`}
-                style={{
-                    transformOrigin: isEnabled ? "right center" : "left center"
-                }}
-            />
-            
-            {/* Text Label */}
-            <h3
-                className={`text-[14px] font-normal leading-[16.41px] z-10 transition-all duration-300 ${
-                    isEnabled ? "text-[#07FF35] pt-0.5" : "text-[#F2161A] pt-0.5"
-                }`}
-            >
-                {isEnabled ? enabledText : disabledText}
-            </h3>
-            
-            {/* Indicator Dot */}
-            <span className={`w-[5px] h-[5px] rounded-full z-10 transition-all duration-300 ${
-                isEnabled ? "bg-[#07FF35]" : "bg-[#F2161A]"
-            }`}></span>
-            
-            {/* Toggle Icon with fade animation */}
-            <div className="relative z-10 w-[30px] h-[30px] md:w-[30px] md:h-[30px]">
-                <Image
-                    src="/assets/enable.svg"
-                    alt="enable"
-                    width={30}
-                    height={30}
-                    className="absolute top-0 left-0 md:w-[30px] md:h-[30px] w-[25px] h-[25px] transition-opacity duration-300"
-                    style={{
-                        opacity: isEnabled ? 1 : 0
-                    }}
+        <div className="flex items-center">
+            <label className="switch relative inline-block w-[120px] h-[40px] cursor-pointer">
+                <input
+                    type="checkbox"
+                    checked={isEnabled}
+                    onChange={handleToggle}
+                    className="sr-only"
                 />
-                <Image
-                    src="/assets/disabled.svg"
-                    alt="disable"
-                    width={30}
-                    height={30}
-                    className="absolute top-0 left-0 md:w-[30px] md:h-[30px] w-[25px] h-[25px] transition-opacity duration-300"
+                <span className={`slider absolute top-0 left-0 right-0 bottom-0 rounded-[34px] transition-all duration-[0.4s] ${isEnabled ? "bg-[#134925]" : "bg-[#F2161A33]"
+                    }`}>
+                    <span className="absolute text-white text-[12px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        {isEnabled ? "ENABLED" : "DISABLED"}
+                    </span>
+                </span>
+
+                {/* Toggle Circle */}
+                <div
+                    className="absolute h-[26px] w-[26px] left-[4px] bottom-[7px] rounded-full transition-all duration-[0.4s]"
                     style={{
-                        opacity: isEnabled ? 0 : 1
+                        transform: isEnabled ? "translateX(85px)" : "translateX(0)"
                     }}
-                />
-            </div>
-        </button>
+                >
+                    {/* Icon container */}
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        {isEnabled ? (
+                            <svg width="40" height="40" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[30px] md:h-[30px] w-[25px] h-[25px]">
+                                <rect width="30" height="30" rx="15" fill="black" />
+                                <path d="M15 2.5V7.5" stroke="#07FF35" strokeWidth="1.875" strokeLinecap="round" />
+                                <path d="M10.625 4.63281C6.58507 6.33971 3.75 10.339 3.75 15.0004C3.75 21.2136 8.7868 26.2504 15 26.2504C21.2133 26.2504 26.25 21.2136 26.25 15.0004C26.25 10.339 23.4149 6.33971 19.375 4.63281" stroke="#07FF35" strokeWidth="1.875" strokeLinecap="round" />
+                            </svg>
+                        ) : (
+                            <svg width="40" height="40" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[30px] md:h-[30px] w-[25px] h-[25px]">
+                                <rect width="30" height="30" rx="15" fill="black" />
+                                <path d="M15 2.5V7.5" stroke="#F2161A" strokeWidth="1.875" strokeLinecap="round" />
+                                <path d="M10.625 4.63281C6.58507 6.33971 3.75 10.339 3.75 15.0004C3.75 21.2136 8.7868 26.2504 15 26.2504C21.2133 26.2504 26.25 21.2136 26.25 15.0004C26.25 10.339 23.4149 6.33971 19.375 4.63281" stroke="#F2161A" strokeWidth="1.875" strokeLinecap="round" />
+                            </svg>
+                        )}
+                    </div>
+                </div>
+            </label>
+        </div>
     )
 }
 
